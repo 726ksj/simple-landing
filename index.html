@@ -11,14 +11,12 @@
       --navy-deep: #08214f;
       --blue: #2454b8;
       --sky: #eaf2ff;
-      --sky-2: #f3f7ff;
       --line: rgba(15, 47, 115, 0.12);
       --text: #1d2433;
       --sub: #5f6b85;
       --white: #ffffff;
       --bg: #f6f8fc;
       --shadow: 0 18px 50px rgba(24, 42, 88, 0.12);
-      --shadow-soft: 0 12px 30px rgba(24, 42, 88, 0.08);
       --radius-xl: 28px;
       --radius-lg: 22px;
       --max: 1180px;
@@ -44,18 +42,6 @@
 
     .section {
       padding: 96px 0;
-      position: relative;
-    }
-
-    .section::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
-      width: min(1080px, calc(100% - 64px));
-      border-top: 1px dashed rgba(36,84,184,0.12);
-      opacity: 0.7;
     }
 
     header {
@@ -85,8 +71,8 @@
     }
 
     .brand-badge {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 14px;
       display: grid;
       place-items: center;
@@ -94,18 +80,6 @@
       color: var(--white);
       box-shadow: var(--shadow);
       font-size: 18px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .brand-badge::after {
-      content: "✈";
-      position: absolute;
-      font-size: 11px;
-      right: 6px;
-      top: 5px;
-      opacity: 0.85;
-      transform: rotate(18deg);
     }
 
     .nav-links {
@@ -128,7 +102,6 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       border: 1px solid transparent;
       cursor: pointer;
-      white-space: nowrap;
     }
 
     .btn:hover {
@@ -143,12 +116,12 @@
 
     .btn-secondary {
       color: var(--navy);
-      background: rgba(255,255,255,0.84);
+      background: rgba(255,255,255,0.82);
       border-color: rgba(15,47,115,0.12);
     }
 
     .hero {
-      padding: 88px 0 84px;
+      padding: 86px 0 80px;
       position: relative;
       overflow: hidden;
     }
@@ -179,52 +152,11 @@
       background: rgba(87, 147, 255, 0.15);
     }
 
-    .cloud,
-    .cloud::before,
-    .cloud::after {
-      position: absolute;
-      background: rgba(255,255,255,0.62);
-      border-radius: 999px;
-    }
-
-    .cloud {
-      width: 88px;
-      height: 28px;
-      top: 92px;
-      right: 20%;
-      animation: floatCloud 8s ease-in-out infinite;
-    }
-
-    .cloud::before {
-      content: "";
-      width: 34px;
-      height: 34px;
-      left: 12px;
-      top: -14px;
-    }
-
-    .cloud::after {
-      content: "";
-      width: 28px;
-      height: 28px;
-      right: 14px;
-      top: -10px;
-    }
-
-    .cloud.two {
-      top: auto;
-      bottom: 80px;
-      left: 5%;
-      right: auto;
-      transform: scale(0.84);
-      animation-delay: 1s;
-    }
-
     .hero-grid {
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: 1.04fr 0.96fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 34px;
       align-items: center;
     }
@@ -245,8 +177,8 @@
 
     h1 {
       margin: 0 0 18px;
-      font-size: clamp(42px, 7vw, 72px);
-      line-height: 1.03;
+      font-size: clamp(42px, 7vw, 70px);
+      line-height: 1.05;
       letter-spacing: -0.05em;
       color: var(--navy-deep);
     }
@@ -275,12 +207,11 @@
     .pill {
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.74);
       border: 1px solid rgba(15,47,115,0.1);
       color: var(--navy);
       font-size: 14px;
       font-weight: 700;
-      box-shadow: var(--shadow-soft);
     }
 
     .hero-card {
@@ -290,8 +221,6 @@
       background: linear-gradient(180deg, #ffffff 0%, #edf3ff 100%);
       border: 1px solid rgba(15,47,115,0.08);
       box-shadow: var(--shadow);
-      min-height: 660px;
-      overflow: hidden;
     }
 
     .hero-card::before {
@@ -304,39 +233,13 @@
       z-index: 0;
     }
 
-    .travel-plane {
-      position: absolute;
-      right: 28px;
-      top: 26px;
-      z-index: 3;
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: var(--white);
-      background: linear-gradient(135deg, #3e75e6, #123a8a);
-      box-shadow: 0 14px 30px rgba(24, 58, 138, 0.26);
-      animation: planeFloat 4.5s ease-in-out infinite;
-      font-size: 24px;
-    }
-
-    .plane-route {
-      position: absolute;
-      inset: 72px 22px 22px 22px;
-      z-index: 1;
-      pointer-events: none;
-    }
-
     .phone-screen {
       position: relative;
-      z-index: 2;
-      min-height: 624px;
+      z-index: 1;
+      min-height: 580px;
       border-radius: 26px;
       padding: 24px;
-      background:
-        radial-gradient(circle at 75% 18%, rgba(255,255,255,0.18), transparent 18%),
-        linear-gradient(180deg, var(--navy) 0%, #17469f 100%);
+      background: linear-gradient(180deg, var(--navy) 0%, #17469f 100%);
       color: var(--white);
       overflow: hidden;
     }
@@ -357,8 +260,6 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 18px;
-      position: relative;
-      z-index: 2;
     }
 
     .screen-chip {
@@ -367,95 +268,21 @@
       background: rgba(255,255,255,0.14);
       font-size: 12px;
       font-weight: 700;
-      backdrop-filter: blur(8px);
     }
 
     .screen-title {
       font-size: 28px;
       line-height: 1.15;
       letter-spacing: -0.03em;
-      margin: 10px 0 18px;
-      max-width: 300px;
+      margin: 10px 0 14px;
+      max-width: 280px;
       position: relative;
-      z-index: 2;
-    }
-
-    .mini-map {
-      position: relative;
-      z-index: 2;
-      height: 142px;
-      border-radius: 24px;
-      margin-bottom: 16px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06)),
-        linear-gradient(180deg, rgba(17,54,127,0.8), rgba(18,73,171,0.7));
-      border: 1px solid rgba(255,255,255,0.12);
-      overflow: hidden;
-    }
-
-    .mini-map::before,
-    .mini-map::after {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border-radius: 18px;
-      border: 1px dashed rgba(255,255,255,0.18);
-      opacity: 0.8;
-    }
-
-    .mini-map::after {
-      inset: auto;
-      width: 148px;
-      height: 2px;
-      left: 26px;
-      top: 50px;
-      border: 0;
-      background: transparent;
-      border-top: 2px dashed rgba(255,255,255,0.34);
-      transform: rotate(-10deg);
-      box-shadow: 78px 34px 0 0 rgba(255,255,255,0);
-    }
-
-    .map-dot {
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 0 0 6px rgba(255,255,255,0.16);
-      z-index: 2;
-    }
-
-    .map-dot.one { left: 34px; top: 42px; }
-    .map-dot.two { right: 48px; top: 26px; }
-    .map-dot.three { right: 88px; bottom: 34px; }
-
-    .map-path {
-      position: absolute;
-      left: 40px;
-      top: 48px;
-      width: 180px;
-      height: 86px;
-      border: 2px dashed rgba(255,255,255,0.34);
-      border-color: rgba(255,255,255,0.34) transparent transparent transparent;
-      border-radius: 60% 70% 0 0;
-      transform: rotate(10deg);
-      opacity: 0.9;
-    }
-
-    .map-plane {
-      position: absolute;
-      left: 96px;
-      top: 32px;
-      font-size: 18px;
-      animation: planeAcross 5s linear infinite;
-      transform-origin: center;
-      z-index: 3;
+      z-index: 1;
     }
 
     .screen-card {
       position: relative;
-      z-index: 2;
+      z-index: 1;
       padding: 18px;
       border-radius: 22px;
       background: rgba(255,255,255,0.12);
@@ -480,7 +307,7 @@
       display: grid;
       gap: 12px;
       position: relative;
-      z-index: 2;
+      z-index: 1;
     }
 
     .timeline-item {
@@ -492,13 +319,6 @@
       border-radius: 18px;
       background: rgba(255,255,255,0.14);
       border: 1px solid rgba(255,255,255,0.12);
-      transform: translateY(0);
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .timeline-item:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.18);
     }
 
     .time {
@@ -539,7 +359,6 @@
       font-size: clamp(30px, 5vw, 46px);
       letter-spacing: -0.04em;
       color: var(--navy-deep);
-      line-height: 1.14;
     }
 
     .section-head p {
@@ -549,28 +368,10 @@
       font-size: 17px;
     }
 
-    .travel-divider {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 18px;
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .travel-divider::before,
-    .travel-divider::after {
-      content: "";
-      width: 46px;
-      border-top: 1px dashed rgba(36,84,184,0.3);
-    }
-
     .stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
-      margin-bottom: 18px;
     }
 
     .stat-card,
@@ -590,18 +391,6 @@
     .stat-card {
       padding: 26px 22px;
       border-radius: var(--radius-lg);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-card::after {
-      content: "✈";
-      position: absolute;
-      right: 18px;
-      top: 16px;
-      font-size: 18px;
-      color: rgba(36,84,184,0.14);
-      transform: rotate(20deg);
     }
 
     .stat-card strong {
@@ -712,12 +501,6 @@
       border-radius: var(--radius-xl);
       position: relative;
       overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .feature:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 22px 48px rgba(24, 42, 88, 0.14);
     }
 
     .feature::after {
@@ -772,24 +555,12 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
-      position: relative;
-    }
-
-    .scenario::before {
-      content: "";
-      position: absolute;
-      top: 58px;
-      left: 13%;
-      width: 74%;
-      border-top: 2px dashed rgba(36,84,184,0.2);
-      z-index: 0;
     }
 
     .scenario-step {
       border-radius: var(--radius-xl);
       padding: 28px;
       position: relative;
-      z-index: 1;
     }
 
     .scenario-step .num {
@@ -952,31 +723,13 @@
       border-radius: 34px;
       text-align: center;
       background: linear-gradient(135deg, rgba(36,84,184,0.12), rgba(15,47,115,0.08)), #ffffff;
-      position: relative;
-      overflow: hidden;
     }
-
-    .cta-box::before,
-    .cta-box::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: rgba(36,84,184,0.06);
-      pointer-events: none;
-    }
-
-    .cta-box::before { left: -54px; top: -54px; }
-    .cta-box::after { right: -70px; bottom: -80px; }
 
     .cta-box h2 {
       margin: 0 0 12px;
       font-size: clamp(30px, 5vw, 48px);
       letter-spacing: -0.04em;
       color: var(--navy-deep);
-      position: relative;
-      z-index: 1;
     }
 
     .cta-box p {
@@ -984,8 +737,6 @@
       max-width: 720px;
       color: var(--sub);
       font-size: 17px;
-      position: relative;
-      z-index: 1;
     }
 
     footer {
@@ -1014,23 +765,6 @@
       transform: translateY(0);
     }
 
-    @keyframes planeFloat {
-      0%, 100% { transform: translateY(0) rotate(14deg); }
-      50% { transform: translateY(-10px) rotate(6deg); }
-    }
-
-    @keyframes planeAcross {
-      0% { transform: translate(0, 0) rotate(12deg); opacity: 0.2; }
-      15% { opacity: 1; }
-      50% { transform: translate(80px, -26px) rotate(4deg); }
-      100% { transform: translate(146px, 30px) rotate(24deg); opacity: 0.9; }
-    }
-
-    @keyframes floatCloud {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
     @media (max-width: 1080px) {
       .hero-grid,
       .stats,
@@ -1042,10 +776,6 @@
       .roadmap,
       .team-grid {
         grid-template-columns: 1fr 1fr;
-      }
-
-      .scenario::before {
-        display: none;
       }
     }
 
@@ -1075,20 +805,8 @@
         padding: 64px 0 48px;
       }
 
-      .hero-card,
       .phone-screen {
         min-height: auto;
-      }
-
-      .travel-plane,
-      .cloud,
-      .cloud.two,
-      .section::before {
-        display: none;
-      }
-
-      .screen-title {
-        max-width: none;
       }
     }
   </style>
@@ -1103,7 +821,8 @@
       <nav class="nav-links">
         <a href="#problem">문제 정의</a>
         <a href="#solution">핵심 기능</a>
-        <a href="#scenario">이용 흐름</a>
+        <a href="#strategy">전략</a>
+        <a href="#team">팀 소개</a>
         <a href="#cta" class="btn btn-primary">서비스 보기</a>
       </nav>
     </div>
@@ -1111,33 +830,26 @@
 
   <main id="top">
     <section class="hero">
-      <div class="cloud"></div>
-      <div class="cloud two"></div>
       <div class="container hero-grid">
         <div class="hero-copy" data-reveal>
-          <span class="eyebrow">✈ AI Travel Log Service</span>
           <h1>기록되는 여행,<br />이어지는 동선</h1>
           <p>
             TRIPON은 여행 사진과 GPS 동선을 연결해 여행 일지, 장소별 사진 정리,
             맞춤형 이동 경로까지 한 번에 제공하는 올인원 여행 기록 서비스입니다.
-            여행의 순간은 자동으로 정리되고, 기억은 더 직관적인 타임라인으로 남습니다.
+            기록은 더 자동화되고, 여행의 기억은 더 선명하게 남습니다.
           </p>
           <div class="hero-actions">
             <a href="#solution" class="btn btn-primary">핵심 기능 보기</a>
             <a href="#problem" class="btn btn-secondary">문제 정의 보기</a>
           </div>
           <div class="hero-points">
-            <span class="pill">🧠 AI 여행 기록 자동 생성</span>
-            <span class="pill">🗺 GPS 기반 동선 정리</span>
-            <span class="pill">📸 사진 자동 분류·아카이빙</span>
+            <span class="pill">AI 여행 기록 자동 생성</span>
+            <span class="pill">GPS 기반 동선 정리</span>
+            <span class="pill">사진 자동 분류·아카이빙</span>
           </div>
         </div>
 
         <div class="hero-card" data-reveal>
-          <div class="travel-plane">✈</div>
-          <svg class="plane-route" viewBox="0 0 460 620" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M350 12C423 62 403 148 328 170C247 193 215 248 245 304C285 378 186 392 158 444C130 495 158 550 232 585" stroke="rgba(36,84,184,0.18)" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 10"/>
-          </svg>
           <div class="phone-screen">
             <div class="screen-top">
               <div class="screen-chip">Today’s Travel Log</div>
@@ -1145,15 +857,6 @@
             </div>
             <div class="screen-title">흩어진 여행 사진과 동선을
               자동으로 하나의 기록으로</div>
-
-            <div class="mini-map">
-              <span class="map-dot one"></span>
-              <span class="map-dot two"></span>
-              <span class="map-dot three"></span>
-              <span class="map-path"></span>
-              <span class="map-plane">✈</span>
-            </div>
-
             <div class="screen-card">
               <h3>AI Note</h3>
               <p>위치 정보와 촬영 시간, 이동 경로를 기반으로 여행 일지를 자동 생성합니다.</p>
@@ -1194,37 +897,13 @@
       <div class="container">
         <div class="section-head" data-reveal>
           <span class="section-label">Problem</span>
-          <h2>여행 기록은 필요하지만,<br />과정은 아직 번거롭습니다</h2>
+          <h2>여행 기록은 필요하지만,
+            과정은 아직 번거롭습니다</h2>
           <p>
             많은 사용자가 여행 후 기록을 남기고 있지만, 사진 정리와 글 작성, 이동 경로 회상에 많은 시간을 쓰고 있습니다.
             TRIPON은 이 번거로운 후처리 경험을 자동화하는 데 집중합니다.
           </p>
-          <div class="travel-divider">TRAVEL PAIN POINTS</div>
         </div>
-
-        <div class="stats">
-          <article class="stat-card" data-reveal>
-            <span>여행 후 기록 여부</span>
-            <strong>89.8%</strong>
-            <p>여행 후 기록을 남기는 사용자가 대다수입니다.</p>
-          </article>
-          <article class="stat-card" data-reveal>
-            <span>기록 소요 시간</span>
-            <strong>51.5%</strong>
-            <p>절반 이상이 사진 기록 정리에 1시간 이상을 사용합니다.</p>
-          </article>
-          <article class="stat-card" data-reveal>
-            <span>회상 시 불편</span>
-            <strong>23%</strong>
-            <p>방문 장소 자체가 기억나지 않는다고 답했습니다.</p>
-          </article>
-          <article class="stat-card" data-reveal>
-            <span>위치 기억 문제</span>
-            <strong>18%</strong>
-            <p>사진을 찍은 장소가 떠오르지 않는 경험이 나타났습니다.</p>
-          </article>
-        </div>
-
         <div class="grid-2">
           <article class="card" data-reveal>
             <h3>기록 과정의 핵심 불편</h3>
@@ -1252,11 +931,11 @@
               나중에 다시 찾고 떠올리기가 어렵습니다.
             </p>
             <div class="media-tags">
-              <span class="media-tag">📱 사진 앱 저장</span>
-              <span class="media-tag">📷 인스타그램</span>
-              <span class="media-tag">✍ 블로그</span>
-              <span class="media-tag">🧭 이동 경로 기억 어려움</span>
-              <span class="media-tag">🔎 기록 다시 찾기 어려움</span>
+              <span class="media-tag">사진 앱 저장</span>
+              <span class="media-tag">인스타그램</span>
+              <span class="media-tag">블로그</span>
+              <span class="media-tag">이동 경로 기억 어려움</span>
+              <span class="media-tag">기록 다시 찾기 어려움</span>
             </div>
           </article>
         </div>
@@ -1267,12 +946,12 @@
       <div class="container">
         <div class="section-head" data-reveal>
           <span class="section-label">Solution</span>
-          <h2>TRIPON은 기록을 자동화하고,<br />여행의 맥락까지 연결합니다</h2>
+          <h2>TRIPON은 기록을 자동화하고,
+            여행의 맥락까지 연결합니다</h2>
           <p>
             사진 정리, 여행 일지 작성, 동선 회상, 다음 여행을 위한 추천까지.
             여행 전후의 단절된 경험을 하나의 흐름으로 연결한 것이 TRIPON의 핵심입니다.
           </p>
-          <div class="travel-divider">FROM MEMORY TO ROUTE</div>
         </div>
 
         <div class="feature-grid">
@@ -1323,50 +1002,16 @@
       </div>
     </section>
 
-    <section class="section" id="scenario">
+    <section class="section">
       <div class="container">
         <div class="section-head" data-reveal>
           <span class="section-label">Scenario</span>
-          <h2>여행 중의 기록이,<br />여행 후에도 자연스럽게 이어집니다</h2>
+          <h2>여행 중의 기록이,
+            여행 후에도 자연스럽게 이어집니다</h2>
           <p>
             사용자는 여행 중 다양한 사진과 순간을 남기지만, 며칠 후에는 사진 정리가 안 되어 있고 방문한 장소도 희미해집니다.
             TRIPON은 그 사이의 공백을 자동 기록으로 메워줍니다.
           </p>
-          <div class="travel-divider">TRIP FLOW</div>
-        </div>
-
-        <div class="scenario">
-          <article class="scenario-step" data-reveal>
-            <div class="num">1</div>
-            <h3>여행 중</h3>
-            <p>사용자는 사진과 영상을 자유롭게 찍으며 여행의 순간을 남깁니다. 별도의 기록 행위 없이도 데이터가 자연스럽게 쌓입니다.</p>
-          </article>
-          <article class="scenario-step" data-reveal>
-            <div class="num">2</div>
-            <h3>여행 n일 후</h3>
-            <p>사진이 흩어져 있고 방문 장소와 이동 경로가 기억나지 않아 정리의 필요성을 느끼지만, 직접 정리하기에는 부담이 큽니다.</p>
-          </article>
-          <article class="scenario-step" data-reveal>
-            <div class="num">3</div>
-            <h3>TRIPON으로 해결</h3>
-            <p>동선과 사진이 연결된 타임라인 형태의 결과물을 바로 제공해 여행 기록 관리가 더 쉽고 직관적으로 바뀝니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta" id="cta">
-      <div class="container">
-        <div class="cta-box" data-reveal>
-          <h2>여행의 순간을 남기는 데서 끝나지 않고,<br />다시 꺼내보기 쉬운 기록으로</h2>
-          <p>
-            TRIPON은 사진, 장소, 동선, 기억을 연결해 여행 후 정리의 피로를 줄이고,
-            다음 여행까지 이어지는 경험을 만듭니다.
-          </p>
-          <div class="hero-actions" style="justify-content:center; margin-top: 0; position: relative; z-index: 1;">
-            <a href="#top" class="btn btn-primary">✈ TRIPON 시작하기</a>
-            <a href="#solution" class="btn btn-secondary">핵심 기능 다시 보기</a>
-          </div>
         </div>
       </div>
     </section>
