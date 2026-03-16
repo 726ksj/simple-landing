@@ -809,6 +809,80 @@
         min-height: auto;
       }
     }
+    /* Flying plane layer */
+.flight-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* 비행 경로 (점선 느낌의 라인) */
+.flight-path {
+  position: absolute;
+  top: 18%;
+  left: -20%;
+  width: 140%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: rotate(-6deg);
+  opacity: 0.25;
+}
+
+.flight-dash {
+  flex: 1;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(36,84,184,0.0), rgba(36,84,184,0.45));
+}
+
+/* 비행기 아이콘 */
+.plane-icon {
+  position: absolute;
+  top: 16%;
+  left: -80px;
+  font-size: 26px;
+  text-shadow: 0 4px 14px rgba(15,47,115,0.35);
+  animation: plane-fly 18s linear infinite;
+}
+
+/* 비행기 이동 경로 애니메이션 */
+@keyframes plane-fly {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-4deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(120vw, -18px, 0) rotate(3deg);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(150vw, -26px, 0) rotate(6deg);
+    opacity: 0;
+  }
+}
+
+/* hero, header 위로 잘 보이도록 z-index 조정 */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
   </style>
 </head>
 <body>
