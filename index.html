@@ -808,6 +808,11 @@
       .phone-screen {
         min-height: auto;
       }
+      
+      .plane-icon {
+        top: 20%;
+        font-size: 42px;  /* 모바일: 22px → 42px */
+      }
     }
     /* Flying plane layer */
 .flight-layer {
@@ -816,6 +821,8 @@
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  <div class="cloud">☁️</div>
+  <div class="cloud small">☁️</div>
 }
 
 /* 비행 경로 (점선 느낌의 라인) */
@@ -839,13 +846,13 @@
   background: linear-gradient(90deg, rgba(36,84,184,0.0), rgba(36,84,184,0.45));
 }
 
-/* 비행기 아이콘 */
+/* 비행기 아이콘 (크기 2배 확대) */
 .plane-icon {
   position: absolute;
   top: 16%;
   left: -80px;
-  font-size: 26px;
-  text-shadow: 0 4px 14px rgba(15,47,115,0.35);
+  font-size: 48px;  /* 기존 26px → 48px */
+  text-shadow: 0 6px 20px rgba(15,47,115,0.4);  /* 그림자도 약간 강화 */
   animation: plane-fly 18s linear infinite;
 }
 
